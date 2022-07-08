@@ -1,0 +1,65 @@
+<mvc:View controllerName="sap.training.sync.training.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:core="sap.ui.core"
+    xmlns:ui="sap.ui.table"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <VBox >
+                <Button text="다음 화면 2" press="onNavToView2"></Button>
+                <Button text="다음 화면 3" press="onNavToView3"></Button>
+            </VBox>
+            <ui:Table id="uiTable" rows="{/students}" selectionMode="Single" visibleRowCount="{/studentsLen}" ariaLabelledBy="title">
+                <ui:extension>
+                    <OverflowToolbar style="Clear">
+                        <Title id="title" text="성적표"/>
+                        <Button text="평가" press="onEval"></Button>
+                        <ToolbarSeparator/>
+                        <ToolbarSpacer/>
+                        <!-- <Button icon="{= ${/bDesc} ? 'sap-icon://arrow-bottom' : 'sap-icon://arrow-top'}" press="onSort"></Button>
+                        <Input id="scoreStart" width="5rem" placeholder="최소점수"/>
+                        <Input id="scoreEnd" width="5rem" placeholder="최대점수"/> -->
+                        <Button text="추가" press="onRegistPopup" />
+                        <Button text="삭제" press="onDelete"/>
+                        <Input id="searchInput" width="20rem" value="{/searchValue}" submit="onSearch" change="onChange"/>
+                        <Button text="검색" press="onSearch"/>
+                    </OverflowToolbar>
+                </ui:extension>
+                <ui:columns>
+                    <ui:Column width="11rem" filterProperty="name" sortProperty="name">
+                        <Label text="이름" />
+                        <ui:template>
+                            <Text text="{name}" wrapping="false" />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="11rem" filterProperty="score1" sortProperty="score1">
+                        <Label text="점수1" />
+                        <ui:template>
+                            <Text text="{score1}" wrapping="false" />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="11rem" filterProperty="score2" sortProperty="score2">
+                        <Label text="점수2" />
+                        <ui:template>
+                            <Text text="{score2}" wrapping="false" />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="11rem">
+                        <Label text="주소" />
+                        <ui:template>
+                            <Text text="{address}" wrapping="false" />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column width="11rem">
+                        <Label text="결과" />
+                        <ui:template>
+                            <Text text="{result}" wrapping="false" />
+                        </ui:template>
+                    </ui:Column>
+                </ui:columns>
+            </ui:Table>
+        </content>
+    </Page>
+</mvc:View>

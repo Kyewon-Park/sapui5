@@ -1,0 +1,109 @@
+<mvc:View controllerName="sap.training.sync.training.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+    >
+    <Page id="page" title="{i18n>title}">
+        <!-- <l:HorizontalLayout id="vl">
+            <l:content>
+                <Label labelFor="idInput" text="Name" id="vl-label-idInput" class="sapUiTinyMarginTopBottom"></Label>
+                <Input id="idInput" value="John" class="sapUiTinyMarginTopBottom" required="true"></Input>
+                <Button text="Submit" id="vl-submit" class="sapUiTinyMarginTopBottom"></Button>
+            </l:content>    
+        </l:HorizontalLayout> -->
+
+        <!-- <l:Grid hSpacing="1" vSpacing="1" id="page-grid">
+            <l:content>
+                <Label id="page-grid-label" labelFor="idNameInput" text="Name">
+                    <layoutData>
+                        <l:GridData  span="L2 M4 S12" id="lgrid1"></l:GridData>
+                    </layoutData>
+                </Label>
+                <Input id="idNameInput" value="Bob" width="100%">
+                    <layoutData>
+                        <l:GridData  span="L10 M8 S12" id="lgrid2" linebreak="true"></l:GridData>
+                    </layoutData>
+                </Input>
+                <Button id="button1" text="Submit" width="100%">
+                    <layoutData>
+                        <l:GridData  span="L2 M4 S12" id="lgrid3"></l:GridData>
+                    </layoutData> 
+                </Button>
+                <Label id="page-grid-label2" labelFor="idFirstNameInput" text="Name">
+                    <layoutData>
+                        <l:GridData  span="L2 M4 S12" id="lgrid6"></l:GridData>
+                    </layoutData>
+                </Label>
+                <Input id="idFirstNameInput" value="John" width="100%">
+                    <layoutData>
+                        <l:GridData  span="L10 M8 S12" id="lgrid4"></l:GridData>
+                    </layoutData>
+                </Input>
+                <Button id="button2" text="Submit" width="100%">
+                    <layoutData>
+                        <l:GridData indent="M4"  span="L2 M4 S12" id="lgrid5"></l:GridData>
+                    </layoutData> 
+                </Button>
+            </l:content>
+        </l:Grid> -->
+
+        <!-- <l:ResponsiveFlowLayout id="rfl" class="sapUiTinyMargin">
+            <l:content>
+                <l:VerticalLayout id="rfl-vl" width="90%">
+                    <l:layoutData>
+                        <l:ResponsiveFlowLayoutData id="rfl-vl-rfd" minWidth="200" margin="true"></l:ResponsiveFlowLayoutData>
+                    </l:layoutData>
+                    <l:content>
+                        <Label labelFor="idInput" text="Name: " id="rfl-vl-l1"></Label>
+                        <Input id="idInput" value="Doe"></Input>
+                    </l:content>
+                </l:VerticalLayout>
+                <l:VerticalLayout id="rfl-vl2" width="90%">
+                    <l:layoutData>
+                        <l:ResponsiveFlowLayoutData id="rfl-vl2-rfd2" weight="2" margin="true"></l:ResponsiveFlowLayoutData>
+                    </l:layoutData>
+                    <l:content>
+                        <Label labelFor="idInput2" text="FirstName: " id="rfl-vl2-l2"></Label>
+                        <Input id="idInput2" value="John"></Input>
+                    </l:content>
+                </l:VerticalLayout>
+            </l:content>
+        </l:ResponsiveFlowLayout> -->
+		<f:SimpleForm id="SimpleFormChange354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Address"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+                <VBox id="a">
+                    <Label text="Name" id="aa"/>
+                    <Input id="nameText" value="SupplierName" />
+                    <layoutData>
+                        <l:GridData span="L3 M6 S12" id="aaa"></l:GridData>
+                    </layoutData>
+                </VBox>
+                <VBox id="a2">
+                    <Label text="Name" id="aa2"/>
+                    <Input id="nameText2" value="SupplierName" />
+                    <layoutData>
+                        <l:GridData span="L9 M6 S12" id="aaa2"></l:GridData>
+                    </layoutData>
+                </VBox>
+			</f:content>
+		</f:SimpleForm>
+    </Page>
+</mvc:View>

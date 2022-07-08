@@ -1,0 +1,206 @@
+<mvc:View controllerName="sap.training.sync.training.controller.View4"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:core="sap.ui.core"
+    xmlns:ui="sap.ui.table"
+    xmlns:uxap="sap.uxap"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:forms="sap.ui.layout.form"
+    xmlns:layout="sap.ui.layout">
+    <uxap:ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false">
+        <uxap:headerTitle>
+            <uxap:ObjectPageDynamicHeaderTitle>
+                <uxap:expandedHeading>
+                    <Title text="주문 상세" />
+                </uxap:expandedHeading>
+
+                <uxap:snappedHeading>
+                    <HBox>
+                        <VBox>
+                            <Title text="Robot Arm Series 9" />
+                            <Label text="PO-48865" />
+                        </VBox>
+                    </HBox>
+                </uxap:snappedHeading>
+
+                <uxap:expandedContent>
+                    <Label text="PO-48865"/>
+                </uxap:expandedContent>
+
+                <uxap:snappedTitleOnMobile>
+                    <Title text="Robot Arm Series 9" />
+                </uxap:snappedTitleOnMobile>
+
+                <uxap:actions>
+                    <Button text="Edit" type="Emphasized" />
+                    <Button text="Delete" />
+                    <Button text="Simulate Assembly" />
+                </uxap:actions>
+            </uxap:ObjectPageDynamicHeaderTitle>
+        </uxap:headerTitle>
+
+        <uxap:headerContent>
+            <FlexBox wrap="Wrap" fitContainer="true">
+                <VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                    <HBox class="sapUiTinyMarginBottom" renderType="Bare">
+                        <Label text="Manufacturer:" class="sapUiTinyMarginEnd" />
+                        <Text text=" Robotech" />
+                    </HBox>
+
+                    <HBox class="sapUiTinyMarginBottom" renderType="Bare">
+                        <Label text="Factory:" class="sapUiTinyMarginEnd" />
+                        <Text text=" Orlando, Florida" />
+                    </HBox>
+
+                    <HBox>
+                        <Label text="Supplier:" class="sapUiTinyMarginEnd" />
+                        <Link text="Robotech (234242343)" />
+                    </HBox>
+                </VBox>
+
+                <VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                    <Title text="Status" class="sapUiTinyMarginBottom" />
+                    <ObjectStatus text="Delivery" state="Success" class="sapMObjectStatusLarge" />
+                </VBox>
+
+                <VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                    <Title text="Delivery Time" class="sapUiTinyMarginBottom" />
+                    <ObjectStatus text="12 Days" icon="sap-icon://shipping-status" class="sapMObjectStatusLarge" />
+                </VBox>
+
+                <VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                    <Title text="Assembly Option" class="sapUiTinyMarginBottom" />
+                    <ObjectStatus text="To Be Selected" state="Error" class="sapMObjectStatusLarge" />
+                </VBox>
+
+                <VBox class="sapUiLargeMarginEnd">
+                    <Title text="Monthly Leasing Instalment" class="sapUiTinyMarginBottom" />
+                    <ObjectNumber number="379.99" unit="USD" emphasized="false" class="sapMObjectNumberLarge" />
+                </VBox>
+            </FlexBox>
+
+        </uxap:headerContent>
+
+        <uxap:sections>
+            <uxap:ObjectPageSection titleUppercase="false" title="General Information">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Order Details" showTitle="false">
+                        <uxap:blocks>
+                            <forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                                <core:Title text="Order Details" />
+
+                                <Label text="Order ID" />
+                                <Text text="589946637" />
+
+                                <Label text="Cotract" />
+                                <Link text="10045876" />
+
+                                <Label text="Transaction Date:" />
+                                <Text text="May 6, 2018" />
+
+                                <Label text="Expected Delivery Date" />
+                                <Text text="June 23, 2018" />
+
+                                <Label text="Factory" />
+                                <Text text="Orlando, FL" />
+
+                                <Label text="Supplier" />
+                                <Text text="Robotech" />
+
+                                <core:Title text="Configuration Accounts" />
+
+                                <Label text="Model" />
+                                <Text text="Robot Arm Series 9" />
+
+                                <Label text="Color" />
+                                <Text text="White (default)" />
+
+                                <Label text="Socket" />
+                                <Text text="Default Socket 10" />
+
+                                <Label text="Leasing Instalment" />
+                                <Text text="379.99 USD per month" />
+
+                                <Label text="Axis" />
+                                <Text text="6 Axis" />
+                            </forms:SimpleForm>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                    <uxap:ObjectPageSubSection title="Products" showTitle="false">
+                        <uxap:blocks>
+                            <Table class="sapUxAPObjectPageSubSectionAlignContent" width="auto">
+                                <headerToolbar>
+                                    <OverflowToolbar>
+                                        <Title text="Products" level="H2" />
+                                        <ToolbarSpacer />
+                                        <SearchField width="17.5rem" />
+                                        <OverflowToolbarButton tooltip="Sort" text="Sort" icon="sap-icon://sort" />
+                                        <OverflowToolbarButton tooltip="Filter" text="Filter" icon="sap-icon://filter" />
+                                        <OverflowToolbarButton tooltip="Group" text="Group" icon="sap-icon://group-2" />
+                                        <OverflowToolbarButton tooltip="Settings" text="Settings" icon="sap-icon://action-settings" />
+                                    </OverflowToolbar>
+                                </headerToolbar>
+
+                                <columns>
+                                    <Column>
+                                        <Text text="Document Number" />
+                                    </Column>
+                                    <Column minScreenWidth="Tablet" demandPopin="true">
+                                        <Text text="Company" />
+                                    </Column>
+                                    <Column minScreenWidth="Tablet" demandPopin="true">
+                                        <Text text="Contact Person" />
+                                    </Column>
+                                    <Column minScreenWidth="Tablet" demandPopin="true">
+                                        <Text text="Posting Date" />
+                                    </Column>
+                                    <Column hAlign="End">
+                                        <Text text="Amount (Local Currency)" />
+                                    </Column>
+                                </columns>
+
+                                <items>
+                                    <ColumnListItem>
+                                        <Link text="10223882001820" />
+                                        <Text text="Jologa" />
+                                        <Text text="Denise Smith" />
+                                        <Text text="11/15/19" />
+                                        <Text text="12,897.00 EUR" />
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection titleUppercase="false" title="Contact Information">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Contact Information">
+                        <uxap:blocks>
+                            <forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+                                <core:Title text="연락처" />
+
+                                <Label text="회사" />
+                                <Text text="{/customer/contract}" />
+
+                                <core:Title text="주소" />
+
+                                <Label text="기본 주소" />
+                                <Text text="{/customer/address}" />
+
+                                <Label text="우편번호" />
+                                <Text text="{/customer/post}" />
+
+                                <core:Title text="이메일" />
+
+                                <Label text="회사" />
+                                <Text text="{/customer/email}" />
+                            </forms:SimpleForm>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+    </uxap:ObjectPageLayout>
+</mvc:View>

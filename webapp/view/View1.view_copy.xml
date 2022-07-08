@@ -1,0 +1,91 @@
+<mvc:View controllerName="sap.training.sync.training.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+    >
+    <Page id="page" title="{i18n>title}">
+
+        <f:SimpleForm id="SimpleFormChange354" columnsXL="1" columnsL="1" columnsM="1" layout="ResponsiveGridLayout">
+            <f:content>
+                <VBox id="arwfeksd">
+                    <Switch state="{oView>/bEditable}" id="Afkqwelasd"></Switch>
+                    <layoutData>
+                        <l:GridData span="L2 M2 S12" id="adfdfdwe" />
+                    </layoutData>
+                </VBox>
+
+                <VBox id="a">
+                    <Label text="입력1" id="aa"/>
+                    <Input id="input1" value="" type="Number" editable="{oView>/bEditable}" liveChange="onEnableButton"/>
+                    <!--liveChange="onLiveChange"   change="onChange" -->
+                    <layoutData>
+                        <l:GridData span="L2 M2 S12" id="aaa"></l:GridData>
+                    </layoutData>
+                </VBox>
+                <VBox id="a2">
+                    <Label text="입력2" id="aa2"/>
+                    <Input id="input2" value="" type="Number"  editable="{oView>/bEditable}" liveChange="onEnableButton"/>
+                    <layoutData>
+                        <l:GridData span="L2 M2 S12" id="aaa2"></l:GridData>
+                    </layoutData>
+                </VBox>
+
+                <VBox id ="se1">
+                    <Label text="연산자" id="selab"></Label>
+                    <Select id="select1" 
+                        forceSelection="false" 
+                        selectedKey="" 
+                        items="{
+                                path: '/operator'
+                        }"
+                        change="checkDivException"
+                    >
+                        <core:Item key="{keyName}"  text="{valueName}" id="sdafds" />                       
+                    </Select>
+                    <layoutData>
+                        <l:GridData span="L3 M3 S12" id="se1gd"></l:GridData>
+                    </layoutData>
+                </VBox>
+
+                <VBox id="a4">
+                    <Text id="assdfa"></Text>
+                    <Button text="계산" id="aa4" press="onCalc" enabled="{oView>/bButtonEnable}"/>
+                    <layoutData>
+                        <l:GridData span="L1 M1 S1" id="aaa4"></l:GridData>
+                    </layoutData>
+                </VBox>
+
+                <VBox id="a3">
+                    <Label text="결과" id="aa3" visible="{oView>/bVisible}"/>
+                    <Input id="input3" value="" type="Number" editable="false"/>
+                    <layoutData>
+                        <l:GridData span="L7 M7 S11" id="aaa3"></l:GridData>
+                    </layoutData>
+                </VBox>
+
+            </f:content>
+        </f:SimpleForm>
+
+        <Table id="prodTable" items="{path:'/operator'}">
+            <columns>
+                <Column id="ads">
+                    <Text text="keyName" id="adfs"></Text>
+                </Column>
+                <Column id="adsasdf">
+                    <Text text="valueName" id="arsg"></Text>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem vAlign="Middle" id="asdfasdfs">
+                    <cells>
+                        <Text text="{keyName}" id="adsfal"></Text>
+                        <Text text="{valueName}" id="asfdl"></Text>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+
+    </Page>
+</mvc:View>

@@ -1,0 +1,100 @@
+<mvc:View controllerName="sap.training.sync.training.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core"
+    xmlns:ui="sap.ui.table"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content> <!-- 'tab' 으로 구분자를 줘서 레벨을 확실히 구분하면서 작성 -->
+
+            <VBox>
+                <Table id="table" items="{/students}">
+                    <headerToolbar>
+                        <OverflowToolbar>
+                            <content>
+                                <Title text="성적표" level="H2"/>
+                                <Button text="ShowDialog" press="onCreateDialog"/>
+                                <ToolbarSpacer />
+                                <Button icon="{= ${/bTableDesc} ? 'sap-icon://arrow-bottom' : 'sap-icon://arrow-top'}" press="onTableSort"  text="{= ${/bTableDesc} ? 'asc' : 'desc'}"></Button>
+                                <Label text="이름 검색" labelFor="search01"></Label>
+                                <Input id="search01" width="10rem"></Input>
+                                <ToolbarSeparator />
+                                <Input id="inputNum1" placeholder="최소숫자" width="5rem" submit="onTotalSearch" ></Input>
+                                <Input id="inputNum2" placeholder="최대숫자" width="5rem" submit="onTotalSearch"></Input>
+                                <Button text="Search" press="onTotalSearch"></Button>
+                            </content>
+                        </OverflowToolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column width="8em">
+                            <Text text="이름" />
+                        </Column>
+                        <Column width="8em" hAlign="End">
+                            <Text text="성적" />
+                        </Column>
+                        <Column width="8rem">
+                            <Text text="가산점" />
+                        </Column>
+                        <Column width="5rem" hAlign="Center">
+                            <Text text="등급" />
+                        </Column>
+                        <Column width="5rem" hAlign="Center">
+                            <Text text="통과여부" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem vAlign="Middle">
+                            <cells> <!-- 위에 정한 컬럼에 순서대로 cells 하위 컨탠츠들이 배치됨 -->
+                                <Text text="{name}" />
+                                <Text text="{score}" />
+                                <Input value="" id="input3" change="onCheck"/>
+                                <!-- <Text text="{grade}" /> -->
+                                <Text text="{
+                                                path: 'score',
+                                                formatter: '.myFormatter.setGrade'
+                                            }" /> <!-- { path:, formatter: [양식]
+                                                        // myFormatter = 내가 컨트롤러에서 선언한 포매터 함수명
+                                                        // .setGrade 종속성으로 formatter.js가 가지고 있는 내부 포매터 매소드를 상속받았음 }-->
+                                <core:Icon src="{= ${pass} ? 'sap-icon://appear-offline' : 'sap-icon://decline' }" />
+                                <!-- <Text text="{pass}" /> core:Icon 합격이면 O, 불합격 X 아이콘으로 변경 -->
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+            <VBox>
+                <ui:Table
+                    id="uiTable"
+                    rows="{/students}"
+                    selectionMode="MultiToggle"
+                    visibleRowCount="7"
+                    ariaLabelledBy="title">
+                    <ui:extension>
+                        <OverflowToolbar style="Clear">
+                            <Title id="title" text="성적표"/>
+                            <ToolbarSeparator/>
+                            <ToolbarSpacer/>
+                            <Button icon="{= ${/bDesc} ? 'sap-icon://arrow-bottom' : 'sap-icon://arrow-top'}" press="onSort"></Button>
+                            <Input id="scoreStart" width="5rem" placeholder="최소점수"/>
+                            <Input id="scoreEnd" width="5rem" placeholder="최대점수"/>
+                            <Input id="searchInput" width="20rem"/>
+                            <Button text="검색" press="onSearch"/>
+                        </OverflowToolbar>
+                    </ui:extension>
+                    <ui:columns>
+                        <ui:Column width="11rem">
+                            <Label text="이름" />
+                            <ui:template>
+                                <Text text="{name}" wrapping="false" />
+                            </ui:template>
+                        </ui:Column>
+                        <ui:Column width="11rem">
+                            <Label text="점수" />
+                            <ui:template>
+                                <Text text="{score}" wrapping="false" />
+                            </ui:template>
+                        </ui:Column>
+                    </ui:columns>
+                </ui:Table>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

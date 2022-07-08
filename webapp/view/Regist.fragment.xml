@@ -1,0 +1,49 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core" >
+   <Dialog
+      id="helloDialog"
+      title ="Register">
+      <HBox>
+        <VBox class="sapUiTinyMargin">
+            <Label text="이름"></Label>
+            <Input id="nameInput" value="{/nameInput}"/>
+        </VBox>
+        <VBox class="sapUiTinyMargin">
+            <Label text="국어"></Label>
+            <Select
+            forceSelection="false"
+            selectedKey="{/score1Input}"
+            items="{
+                path: '/grades'
+            }">
+                <core:Item key="{grade}" text="{grade}" />
+            </Select>
+        </VBox>
+        <VBox class="sapUiTinyMargin">
+            <Label text="수학"></Label>
+            <Select
+            forceSelection="false"
+            selectedKey="{/score2Input}"
+            items="{
+                path: '/grades'
+            }">
+                <core:Item key="{grade}" text="{grade}" />
+            </Select>
+        </VBox>
+        <VBox class="sapUiTinyMargin">
+            <Label text="주소"></Label>
+            <Input valueHelpOnly="true" valueHelpRequest="onPopupAddress" showValueHelp="true" value="{/addressInput}"/>
+        </VBox>
+        <VBox class="sapUiTinyMargin">
+            <Label text=""></Label>
+            <Button text="등록" press="onRegister"/>
+        </VBox>
+    </HBox>
+    <endButton>
+        <Button
+           text="닫기"
+           press="onCloseDialog"/>
+     </endButton>
+   </Dialog>
+</core:FragmentDefinition>
